@@ -1,4 +1,4 @@
-# Two Sum
+# Valid Anagram
 
 [Link to problem](https://leetcode.com/problems/valid-anagram/)
 
