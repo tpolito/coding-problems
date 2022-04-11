@@ -14,19 +14,14 @@ var isValidSudoku = function (board) {
       let rowVal = board[r][c];
       let colVal = board[c][r];
       let squareVal =
-        board[3 * Math.floor(r / 3) + Math.floor(c / 3)][
-          ((3 * r) % 3) + (c % 3)
-        ];
+        board[3 * Math.floor(r / 3) + Math.floor(c / 3)][(r % 3) * 3 + (c % 3)];
 
-      if (rowVal === '.' || colVal === '.' || squareVal === '.') continue;
+      if (row.has(rowVal) || col.has(colVal) || square.has(squareVal))
+        return false;
 
-      if (row.has(rowVal)) return false;
-      if (col.has(colVal)) return false;
-      if (square.has(squareVal)) return false;
-
-      row.add(rowVal);
-      col.add(colVal);
-      square.add(squareVal);
+      if (rowVal !== '.') row.add(rowVal);
+      if (colVal !== '.') col.add(colVal);
+      if (squareVal !== '.') square.add(squareVal);
     }
   }
 
