@@ -4,6 +4,8 @@
 
 ---
 
+## Solution 1
+
 ```js
 var isValidSudoku = function (board) {
   for (let r = 0; r < 9; r += 1) {
@@ -30,3 +32,36 @@ var isValidSudoku = function (board) {
 ```
 
 ### Explanation
+
+---
+
+## Solution 2
+
+```js
+var isValidSudoku = function (board) {
+  let checked = new Set();
+
+  for (let i = 0; i < 9; i++) {
+    for (let j = 0; j < 9; j++) {
+      let cell = board[i][j];
+
+      if (cell != '.') {
+        let row = `r${i}${cell}`;
+        let col = `c${j}${cell}`;
+        let adjacent = `s${Math.floor(i / 3)}${Math.floor(
+          parseInt(j / 3)
+        )}${cell}`;
+
+        if (!checked.has(col) && !checked.has(row) && !checked.has(adjacent)) {
+          checked.add(col);
+          checked.add(row);
+          checked.add(adjacent);
+        } else {
+          return false;
+        }
+      }
+    }
+  }
+  return true;
+};
+```
