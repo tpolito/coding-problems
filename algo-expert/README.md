@@ -3,6 +3,7 @@
 🟢 Easy  
 🔵 Medium  
 🔴 Hard
+⚫ Very hard
 
 ## Questions
 

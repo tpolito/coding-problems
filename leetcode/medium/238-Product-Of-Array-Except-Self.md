@@ -7,24 +7,25 @@
 
 ```js
 var productExceptSelf = function (nums) {
-  let left = [],
-    right = [];
-  let leftNum = 1,
-    rightNum = 1;
+  let len = nums.length;
+  let leftNums = [],
+    leftMultiplier = 1;
+  let rightNums = [],
+    rightMultiplier = 1;
 
-  nums.forEach((num, i) => {
-    left[i] = leftNum;
-    leftNum *= nums[i];
-  });
-
-  for (let i = nums.length - 1; i >= 0; i -= 1) {
-    right[i] = rightNum;
-    rightNum *= nums[i];
-    // We can do the final multiplication here to save an extra iteration at the end.
-    right[i] *= left[i];
+  for (let i = 0; i < len; i += 1) {
+    leftNums[i] = leftMultiplier;
+    leftMultiplier *= nums[i];
   }
 
-  return right;
+  for (let j = len - 1; j >= 0; j -= 1) {
+    rightNums[j] = rightMultiplier;
+    rightMultiplier *= nums[j];
+
+    rightNums[j] *= leftNums[j];
+  }
+
+  return rightNums;
 };
 ```
 
