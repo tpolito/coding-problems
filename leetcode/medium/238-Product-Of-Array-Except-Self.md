@@ -3,7 +3,7 @@
 - [Link to problem](https://leetcode.com/problems/product-of-array-except-self/)
   - [Fantastic explanation](<https://leetcode.com/problems/product-of-array-except-self/discuss/694266/Javascript-Solution-(No-Division)-(With-Explanation)>)
 
-# Solution 1
+## Solution 1
 
 ```js
 var productExceptSelf = function (nums) {
@@ -29,7 +29,7 @@ var productExceptSelf = function (nums) {
 };
 ```
 
-## Explanation
+### Explanation
 
 ![Example Image](../../imgs/238-product-of-array-except-self.png)
 
