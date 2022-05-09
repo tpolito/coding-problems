@@ -1,5 +1,7 @@
 # Tandem Bicycle
 
+- [Link to problem](https://www.algoexpert.io/questions/Tandem%20Bicycle)
+
 ## Solution
 
 ```js
